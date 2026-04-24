@@ -21,7 +21,10 @@ const roles = [
 
 export default function Experience() {
   return (
-    <section className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <section
+      id="experience"
+      className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12"
+    >
       <h2 className="lg:col-span-4 text-4xl font-bold">EXPERIENCE</h2>
       <div className="lg:col-span-8 space-y-0">
         {roles.map((item, idx) => (

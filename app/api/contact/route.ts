@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendEmail, generateContactEmailHTML } from "@/lib/email";
+import {
+  sendEmail,
+  generateContactEmailHTML,
+  generateUserEmailHTML,
+  generateAdminEmailHTML,
+} from "@/lib/email";
 
 // Simple in-memory rate limiting (store in Redis for production)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -86,34 +91,54 @@ export async function POST(request: NextRequest) {
       message: message.slice(0, 5000).trim(),
     };
 
-    // Try to send email notification
+    // Try to send email notifications
     const recipientEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+    let adminEmailSent = false;
+    let userEmailSent = false;
+
+    // Send email to admin/owner
     if (recipientEmail) {
-      const emailHtml = generateContactEmailHTML(
+      const adminEmailHtml = generateAdminEmailHTML(
         sanitizedData.name,
         sanitizedData.email,
         sanitizedData.subject,
         sanitizedData.message,
       );
 
-      const emailSent = await sendEmail({
+      adminEmailSent = await sendEmail({
         to: recipientEmail,
-        subject: `New Contact: ${sanitizedData.subject}`,
-        html: emailHtml,
+        subject: `📨 New Contact: ${sanitizedData.subject}`,
+        html: adminEmailHtml,
       });
 
-      if (emailSent) {
-        console.log("Email sent successfully to:", recipientEmail);
+      if (adminEmailSent) {
+        console.log("Admin email sent successfully to:", recipientEmail);
       } else {
-        console.log(
-          "Email sending failed (but form submission recorded):",
-          sanitizedData,
-        );
+        console.log("Admin email sending failed:", sanitizedData);
       }
+    }
+
+    // Send confirmation email to user
+    const userEmailHtml = generateUserEmailHTML(
+      sanitizedData.name,
+      sanitizedData.subject,
+    );
+
+    userEmailSent = await sendEmail({
+      to: sanitizedData.email,
+      subject: "✨ We've Received Your Message - Thank You!",
+      html: userEmailHtml,
+    });
+
+    if (userEmailSent) {
+      console.log(
+        "Confirmation email sent successfully to:",
+        sanitizedData.email,
+      );
     } else {
       console.log(
-        "No recipient email configured. Contact form submission:",
-        sanitizedData,
+        "User confirmation email sending failed:",
+        sanitizedData.email,
       );
     }
 

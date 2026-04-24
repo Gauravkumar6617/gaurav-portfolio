@@ -3,10 +3,12 @@ import { Globe, Layers, Layout, ArrowUpRight, Flame } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[#0a0a0a] text-white pt-24 pb-16 px-6 md:px-12">
+    <section
+      id="hero"
+      className="relative w-full bg-[#0a0a0a] text-white pt-24 pb-16 px-6 md:px-12"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* LEFT COLUMN: The Iconic Sticky Profile Card */}
-        
 
         {/* RIGHT COLUMN: The High-Impact Content */}
         <div className="lg:col-span-8 flex flex-col">
@@ -26,49 +28,59 @@ export default function Hero() {
           </div>
 
           {/* Stats Bar */}
-          <div className="grid grid-cols-3 gap-8 border-t border-zinc-800 pt-10 pb-12">
+          <div className="grid grid-cols-2 gap-12 border-t border-zinc-800 pt-10 pb-12">
             <div>
-              <span className="text-5xl md:text-7xl font-bold block">+03</span>
+              <span className="text-5xl md:text-7xl font-bold block">1.6+</span>
               <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-500 mt-3 font-black">
                 Years of <br /> Experience
               </p>
             </div>
             <div>
-              <span className="text-5xl md:text-7xl font-bold block">+25</span>
+              <span className="text-5xl md:text-7xl font-bold block">4+</span>
               <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-500 mt-3 font-black">
                 Projects <br /> Completed
-              </p>
-            </div>
-            <div>
-              <span className="text-5xl md:text-7xl font-bold block">+10</span>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-500 mt-3 font-black">
-                AI Models <br /> Deployed
               </p>
             </div>
           </div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Orange Card */}
-            <div className="bg-[#ff4d3a] p-10 rounded-[40px] h-[260px] flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-transform hover:-translate-y-2">
-              <Layers size={40} strokeWidth={2.5} />
-              <h3 className="text-3xl font-black uppercase leading-none w-2/3">
-                AI Systems & RAG Pipeline
-              </h3>
-              <div className="absolute bottom-8 right-8 p-3 border border-white/20 rounded-full group-hover:bg-white group-hover:text-[#ff4d3a] transition-all">
-                <ArrowUpRight size={28} />
+            <div className="bg-gradient-to-br from-[#ff4d3a] to-[#ff3a22] p-8 rounded-[28px] min-h-[240px] flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-1">
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/30 transition-all">
+                  <Layers size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
+                  AI Systems & RAG Pipeline
+                </h3>
               </div>
+              <div className="absolute bottom-6 right-6 p-3 bg-white/20 rounded-full group-hover:bg-white group-hover:text-[#ff4d3a] transition-all duration-300">
+                <ArrowUpRight
+                  size={24}
+                  className="text-white group-hover:text-[#ff4d3a]"
+                />
+              </div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500" />
             </div>
 
             {/* Lime Card */}
-            <div className="bg-[#b4ff39] p-10 rounded-[40px] h-[260px] text-black flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-transform hover:-translate-y-2">
-              <Layout size={40} strokeWidth={2.5} />
-              <h3 className="text-3xl font-black uppercase leading-none w-2/3">
-                Full Stack & Next.js Apps
-              </h3>
-              <div className="absolute bottom-8 right-8 p-3 border-black/10 border rounded-full group-hover:bg-black group-hover:text-[#b4ff39] transition-all">
-                <ArrowUpRight size={28} />
+            <div className="bg-gradient-to-br from-[#b4ff39] to-[#9ef535] p-8 rounded-[28px] min-h-[240px] text-black flex flex-col justify-between group cursor-pointer relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-lime-500/40 hover:-translate-y-1">
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black/20 transition-all">
+                  <Layout size={32} strokeWidth={2} className="text-black" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-black leading-snug">
+                  Full Stack & Next.js Apps
+                </h3>
               </div>
+              <div className="absolute bottom-6 right-6 p-3 bg-black/10 rounded-full group-hover:bg-black group-hover:text-[#b4ff39] transition-all duration-300">
+                <ArrowUpRight
+                  size={24}
+                  className="text-black group-hover:text-[#b4ff39]"
+                />
+              </div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-black/5 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500" />
             </div>
           </div>
         </div>

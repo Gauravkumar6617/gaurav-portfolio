@@ -12,8 +12,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Gaurav Kumar Portfolio",
   description: "Software Engineer Portfolio",
+  icons: {
+    icon: `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='85' font-weight='900' fill='%23f97316'>G</text></svg>`,
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

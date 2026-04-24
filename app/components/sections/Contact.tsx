@@ -21,6 +21,53 @@ interface FieldErrors {
   message?: string;
 }
 
+interface InputFieldProps {
+  name: string;
+  label: string;
+  type?: string;
+  placeholder: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  fieldErrors: FieldErrors;
+}
+
+const InputField: React.FC<InputFieldProps> = ({
+  name,
+  label,
+  type = "text",
+  placeholder,
+  value,
+  onChange,
+  fieldErrors,
+}) => (
+  <div>
+    <label className="text-sm font-semibold text-zinc-300 mb-2 block">
+      {label}
+    </label>
+    <input
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      required
+      className={`w-full bg-zinc-900 border rounded-2xl px-6 py-4 focus:outline-none transition-colors ${
+        fieldErrors[name as keyof FieldErrors]
+          ? "border-red-500 focus:border-red-400"
+          : "border-zinc-800 focus:border-orange-500"
+      }`}
+    />
+    {fieldErrors[name as keyof FieldErrors] && (
+      <div className="flex items-center gap-2 mt-2">
+        <div className="w-1 h-1 bg-red-400 rounded-full animate-pulse" />
+        <p className="text-red-400 text-xs font-medium">
+          {fieldErrors[name as keyof FieldErrors]}
+        </p>
+      </div>
+    )}
+  </div>
+);
+
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -126,49 +173,7 @@ export default function Contact() {
     }
   };
 
-  const InputField = ({
-    name,
-    label,
-    type = "text",
-    placeholder,
-    value,
-    onChange,
-  }: {
-    name: string;
-    label: string;
-    type?: string;
-    placeholder: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  }) => (
-    <div>
-      <label className="text-sm font-semibold text-zinc-300 mb-2 block">
-        {label}
-      </label>
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        required
-        className={`w-full bg-zinc-900 border rounded-2xl px-6 py-4 focus:outline-none transition-colors ${
-          fieldErrors[name as keyof FieldErrors]
-            ? "border-red-500 focus:border-red-400"
-            : "border-zinc-800 focus:border-orange-500"
-        }`}
-      />
-      {fieldErrors[name as keyof FieldErrors] && (
-        <div className="flex items-center gap-2 mt-2">
-          <div className="w-1 h-1 bg-red-400 rounded-full animate-pulse" />
-          <p className="text-red-400 text-xs font-medium">
-            {fieldErrors[name as keyof FieldErrors]}
-          </p>
-        </div>
-      )}
-    </div>
-  );
-
+  
   return (
     <section id="contact" className="w-full py-24">
       <div className="text-center mb-16">
@@ -194,6 +199,7 @@ export default function Contact() {
               placeholder="Gaurav Kumar"
               value={formData.name}
               onChange={handleChange}
+              fieldErrors={fieldErrors}
             />
             <InputField
               name="email"
@@ -202,6 +208,7 @@ export default function Contact() {
               placeholder="gaurav@example.com"
               value={formData.email}
               onChange={handleChange}
+              fieldErrors={fieldErrors}
             />
           </div>
 
@@ -211,6 +218,7 @@ export default function Contact() {
             placeholder="What is this about?"
             value={formData.subject}
             onChange={handleChange}
+            fieldErrors={fieldErrors}
           />
 
           <div>

@@ -23,7 +23,7 @@ const education = [
 
 export default function Education() {
   return (
-    <section className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <section id="education" className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
       <h2 className="lg:col-span-4 text-4xl font-bold flex items-center gap-3">
         <GraduationCap size={40} className="text-orange-500" />
         EDUCATION

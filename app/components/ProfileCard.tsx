@@ -52,7 +52,7 @@ export const ProfileCard = () => (
         </a>
 
         {/* Email */}
-        <a href="mailto:gk2792523@gmail.com"
+        <a href="mailto:gaurvkumar94527@gmail.com"
            className="flex justify-center items-center py-4 rounded-2xl bg-zinc-100 text-zinc-600 transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-md group">
           <Mail size={20} className="group-hover:scale-110 transition-transform" />
         </a>

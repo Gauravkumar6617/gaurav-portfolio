@@ -2,7 +2,7 @@ import { GraduationCap } from "lucide-react";
 
 const education = [
   {
-    year: "2024 — Current",
+    year: "2026 — Current",
     degree: "BCA",
     institution: "Integral University",
     description: "Pursuing Bachelor of Computer Applications",
@@ -10,7 +10,7 @@ const education = [
   {
     year: "2021 — 2024",
     degree: "Diploma",
-    institution: "New Public College",
+    institution: "Hewett Polythecnic",
     description: "Completed Diploma studies",
   },
   {

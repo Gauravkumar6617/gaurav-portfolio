@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-zinc-900 gap-6">
           <p className="text-zinc-500 text-sm italic">
-            © 2026 Gaurav Kumar — AI Systems Engineer
+            © 2026 Gaurav Kumar — Full Stack Developer
           </p>
 
           <div className="flex gap-8">

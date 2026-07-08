@@ -1,12 +1,20 @@
 "use client";
 
-import { Home, User, Briefcase, Mail } from "lucide-react";
+import { Home, User, Briefcase, FolderGit2, Mail } from "lucide-react";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
 
   const scrollToSection = (id: string) => {
+    if (!isHome) {
+      router.push(`/#${id}`);
+      return;
+    }
     setActiveSection(id);
     const element = document.getElementById(id);
     if (element) {
@@ -20,25 +28,31 @@ export default function Navbar() {
         <NavItem
           icon={<Home size={18} />}
           label="Home"
-          active={activeSection === "hero"}
+          active={isHome && activeSection === "hero"}
           onClick={() => scrollToSection("hero")}
         />
         <NavItem
           icon={<User size={18} />}
           label="About"
-          active={activeSection === "experience"}
+          active={isHome && activeSection === "experience"}
           onClick={() => scrollToSection("experience")}
         />
         <NavItem
           icon={<Briefcase size={18} />}
           label="Skills"
-          active={activeSection === "skills"}
+          active={isHome && activeSection === "skills"}
           onClick={() => scrollToSection("skills")}
+        />
+        <NavItem
+          icon={<FolderGit2 size={18} />}
+          label="Projects"
+          active={isHome && activeSection === "projects"}
+          onClick={() => scrollToSection("projects")}
         />
         <NavItem
           icon={<Mail size={18} />}
           label="Contact"
-          active={activeSection === "contact"}
+          active={isHome && activeSection === "contact"}
           onClick={() => scrollToSection("contact")}
         />
       </div>

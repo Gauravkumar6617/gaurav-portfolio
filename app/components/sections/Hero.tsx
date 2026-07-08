@@ -30,15 +30,15 @@ export default function Hero() {
           {/* Main Headline */}
           <div className="mb-12">
             <h1 className="text-[10vw] lg:text-[85px] xl:text-[100px] font-black tracking-tighter leading-[0.9] uppercase mb-8">
-              AI & FULL STACK <br />
+              FULL STACK <br />
               <span className="text-zinc-800 transition-colors hover:text-zinc-700">
                 DEVELOPER
               </span>
             </h1>
             <p className="text-zinc-400 text-lg md:text-xl xl:text-2xl max-w-2xl leading-relaxed">
-              I build intelligent systems that bridge the gap between complex AI
-              logic and seamless user experiences. Specializing in RAG systems,
-              FastAPI, and high-performance React applications.
+              I build web applications with React.js, Express.js, and FastAPI,
+              and integrate third-party APIs to bring products together.
+              Currently learning to bring AI into real-world projects.
             </p>
           </div>
 
@@ -95,10 +95,10 @@ export default function Hero() {
                   <Flame size={28} className="text-black" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
-                  Open for Founding <br /> Partner Roles
+                  Open for Internships <br /> & Junior Roles
                 </h3>
                 <p className="text-black/60 mt-3 text-sm font-medium">
-                  Co-founder opportunities.
+                  Eager to learn and contribute.
                 </p>
               </div>
               <div className="relative z-10 self-end">

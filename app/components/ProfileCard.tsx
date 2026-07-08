@@ -28,7 +28,7 @@ export const ProfileCard = () => (
 
       {/* Bio Section */}
       <p className="text-center text-zinc-500 font-medium text-[15px] leading-relaxed mb-8 max-w-xs">
-        AI Systems Engineer | Python & FastAPI Developer | GenAI & RAG Expert | Next.js Specialist
+        Full Stack Developer | React.js & Express.js | FastAPI & API Integration | Learning AI
       </p>
 
       {/* Social Links - Using Inline SVGs for Brand Icons */}

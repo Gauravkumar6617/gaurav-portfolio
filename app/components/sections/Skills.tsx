@@ -2,32 +2,32 @@ import { Code2, Brain, Database, Zap } from "lucide-react";
 
 const skillCategories = [
   {
+    title: "Frontend",
+    icon: Zap,
+    skills: ["React.js", "Next.js", "Tailwind CSS"],
+  },
+  {
+    title: "Backend",
+    icon: Brain,
+    skills: ["Express.js", "FastAPI", "Node.js", "REST API Integration"],
+  },
+  {
     title: "Programming",
     icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "SQL"],
+    skills: ["JavaScript", "TypeScript", "Python", "SQL"],
   },
   {
-    title: "Backend & AI",
-    icon: Brain,
-    skills: ["FastAPI", "RAG", "AI/ML", "GenAI", "LLM Integration"],
-  },
-  {
-    title: "Database",
+    title: "Database & Tools",
     icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Redis"],
-  },
-  {
-    title: "Frontend & Tools",
-    icon: Zap,
-    skills: ["React.js", "Next.js", "Tailwind CSS", "Git"],
+    skills: ["MongoDB", "PostgreSQL", "Git"],
   },
 ];
 
 const learning = [
-  "Advanced AI Architectures",
-  "Kubernetes & Docker",
+  "AI & LLM API Integration",
+  "RAG Basics",
+  "Docker",
   "System Design",
-  "GraphQL",
 ];
 
 export default function Skills() {
@@ -41,8 +41,7 @@ export default function Skills() {
           </span>
         </h2>
         <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-          A comprehensive toolkit for building intelligent systems and modern
-          web applications
+          The tools I use to build and integrate modern web applications
         </p>
       </div>
 

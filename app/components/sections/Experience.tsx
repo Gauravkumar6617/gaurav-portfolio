@@ -3,7 +3,7 @@ const roles = [
     year: "2024 — Present",
     company: "SIngsys",
     role: "Python Developer",
-    description: "Developing backend systems with Python and FastAPI",
+    description: "Building backend APIs with Python, FastAPI, and Express.js",
   },
   {
     year: "2024",

@@ -14,17 +14,18 @@ export const metadata: Metadata = {
     default: "Gaurav Kumar | Software Engineer Portfolio",
     template: "%s | Gaurav Kumar",
   },
-  description: "Software Engineer specializing in Python, FastAPI, Next.js, and Machine Learning. Building high-performance, scalable web applications.",
+  description: "Full Stack Developer specializing in React.js, Express.js, and FastAPI. Building and integrating web applications and APIs.",
   keywords: [
     "Gaurav Kumar",
     "Software Engineer",
     "Full Stack Developer",
-    "Python Developer",
+    "React Developer",
+    "Express.js",
     "Next.js",
     "React",
     "FastAPI",
-    "PostgreSQL",
-    "Machine Learning",
+    "Python Developer",
+    "API Integration",
     "Portfolio",
   ],
   authors: [{ name: "Gaurav Kumar" }],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://gaurav-portfolio.vercel.app", // Fallback URL, should be updated with actual domain
     title: "Gaurav Kumar | Software Engineer",
-    description: "Software Engineer specializing in Python, FastAPI, Next.js, and Machine Learning.",
+    description: "Full Stack Developer specializing in React.js, Express.js, and FastAPI.",
     siteName: "Gaurav Kumar Portfolio",
     images: [
       {
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Gaurav Kumar | Software Engineer",
-    description: "Software Engineer specializing in Python, FastAPI, Next.js, and Machine Learning.",
+    description: "Full Stack Developer specializing in React.js, Express.js, and FastAPI.",
     images: ["/profile.png"],
     creator: "@gauravkumar", // Placeholder twitter handle
   },

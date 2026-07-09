@@ -28,15 +28,24 @@ export async function PATCH(
     return NextResponse.json({ error: result.error }, { status: 400 });
   }
 
-  const { title, category, description, link, image_url, featured, sort_order } =
-    result.data;
+  const {
+    title,
+    category,
+    description,
+    content,
+    link,
+    image_url,
+    featured,
+    sort_order,
+  } = result.data;
 
   const rows = await sql`
     UPDATE projects
     SET title = ${title}, category = ${category}, description = ${description},
-        link = ${link}, image_url = ${image_url}, featured = ${featured}, sort_order = ${sort_order}
+        content = ${content}, link = ${link}, image_url = ${image_url},
+        featured = ${featured}, sort_order = ${sort_order}
     WHERE id = ${id}
-    RETURNING id, title, category, description, link, image_url, featured, sort_order, created_at
+    RETURNING id, title, category, description, content, link, image_url, featured, sort_order, created_at
   `;
 
   if (rows.length === 0) {

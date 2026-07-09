@@ -8,6 +8,7 @@ type Project = {
   title: string;
   category: string;
   description: string;
+  content: string;
   link: string;
   image_url: string;
   featured: boolean;
@@ -18,6 +19,7 @@ const emptyForm = {
   title: "",
   category: "",
   description: "",
+  content: "",
   link: "",
   image_url: "",
   featured: true,
@@ -51,6 +53,7 @@ export default function AdminDashboard() {
       title: p.title,
       category: p.category,
       description: p.description,
+      content: p.content,
       link: p.link,
       image_url: p.image_url,
       featured: p.featured,
@@ -152,12 +155,19 @@ export default function AdminDashboard() {
               className="rounded-lg bg-[#0a0a0a] border border-white/10 px-4 py-2.5 outline-none focus:border-orange-500 transition md:col-span-2"
             />
             <textarea
-              placeholder="Description"
+              placeholder="Description (short summary shown on cards)"
               value={form.description}
               onChange={(e) =>
                 setForm({ ...form, description: e.target.value })
               }
               rows={3}
+              className="rounded-lg bg-[#0a0a0a] border border-white/10 px-4 py-2.5 outline-none focus:border-orange-500 transition md:col-span-2"
+            />
+            <textarea
+              placeholder="Full project details (shown on the project's own page)"
+              value={form.content}
+              onChange={(e) => setForm({ ...form, content: e.target.value })}
+              rows={8}
               className="rounded-lg bg-[#0a0a0a] border border-white/10 px-4 py-2.5 outline-none focus:border-orange-500 transition md:col-span-2"
             />
             <label className="flex items-center gap-2 text-sm text-zinc-400">

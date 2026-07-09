@@ -35,11 +35,9 @@ export default async function Projects() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((proj) => (
-            <a
+            <Link
               key={proj.id}
-              href={proj.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/projects/${proj.id}`}
               className="group cursor-pointer block"
             >
               <div className="relative aspect-video overflow-hidden rounded-[32px] bg-zinc-900">
@@ -66,7 +64,7 @@ export default async function Projects() {
                   <ArrowUpRight size={20} />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       )}

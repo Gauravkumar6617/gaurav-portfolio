@@ -2,6 +2,7 @@ export type ProjectInput = {
   title: string;
   category: string;
   description: string;
+  content: string;
   link: string;
   image_url: string;
   featured: boolean;
@@ -41,6 +42,9 @@ export function validateProjectInput(
       ? b.description.trim().slice(0, 2000)
       : "";
 
+  const content =
+    typeof b.content === "string" ? b.content.trim().slice(0, 20000) : "";
+
   let image_url = "";
   if (typeof b.image_url === "string" && b.image_url.trim()) {
     const trimmed = b.image_url.trim().slice(0, 500);
@@ -58,6 +62,15 @@ export function validateProjectInput(
 
   return {
     ok: true,
-    data: { title, category, description, link, image_url, featured, sort_order },
+    data: {
+      title,
+      category,
+      description,
+      content,
+      link,
+      image_url,
+      featured,
+      sort_order,
+    },
   };
 }

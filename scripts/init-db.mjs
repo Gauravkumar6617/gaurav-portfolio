@@ -8,6 +8,7 @@ await sql`
     title TEXT NOT NULL,
     category TEXT NOT NULL DEFAULT '',
     description TEXT NOT NULL DEFAULT '',
+    content TEXT NOT NULL DEFAULT '',
     link TEXT NOT NULL,
     image_url TEXT NOT NULL DEFAULT '',
     featured BOOLEAN NOT NULL DEFAULT true,
@@ -15,5 +16,7 @@ await sql`
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
   )
 `;
+
+await sql`ALTER TABLE projects ADD COLUMN IF NOT EXISTS content TEXT NOT NULL DEFAULT ''`;
 
 console.log("projects table ready");

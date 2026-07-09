@@ -12,6 +12,7 @@ export type Project = {
   title: string;
   category: string;
   description: string;
+  content: string;
   link: string;
   image_url: string;
   featured: boolean;
